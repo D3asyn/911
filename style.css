@@ -1,23 +1,37 @@
-body{
-    text-align: center;
+body {
+	text-align: center;
 }
 
-div{
-    background-color: #fff00;
-    font-size: 50px;
-    text-shadow: 1px 1px 3px gray;
-    text-align: center;
+div {
+	background-color: #ffff00;
+	font-size: 30px;
+	text-shadow: 1px 1px 3px gray;
+	text-align: center;
 }
-
-input[type=text]{
-    window: 300px
-    text-align: center;
+input[type="text"] {
+	width: 300px;
+	text-align: center;
 }
-
-li.x0{
-    background-color: red;
+div.x0 {
+	background-color: aqua;
+	padding: 10px;
 }
-
-li.x1{
-    background-color: blue;
+div.x1 {
+	background-color: antiquewhite;
+	padding: 10px;
+}
+div.y1 {
+	color: rgb(225, 208, 208);
+	text-decoration: line-through;
+}
+span {
+	display: inline-block;
+	border-radius: 6px;
+	box-shadow: 1px 1px 3px black;
+	padding: 3px;
+	cursor: pointer;
+	background-color: yellowgreen;
+}
+span:hover {
+	background-color: rgb(211, 144, 144);
 }

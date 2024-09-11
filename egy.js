@@ -1,38 +1,32 @@
-function f(s) {
-	//console.log(s);
-	//document.querySelector("#out").innerHTML = s.split("").reverse().join("");
-	document.getElementById("out").innerHTML = s;
+var bl = []
+
+function refresh() {
+    document
+        .querySelector('#output')
+        .innerHTML =
+        bl.map((elem, i) => {
+            [t, p] = elem
+            return `
+                <div class="x${i % 2} y${p}">
+                    <h1>${t}</h1>
+                    <span onclick="g('${i}')">Y</span>
+                    <span onclick="del('${t}')">N</span>
+                </div>
+            `
+        }).join('')
 }
 
-function add() {
-	const num1 = parseFloat(document.getElementById("num1").value);
-	const num2 = parseFloat(document.getElementById("num2").value);
-
-	if (isNaN(num1) || isNaN(num2)) {
-		alert("Please enter a valid number");
-		return;
-	}
-	document.getElementById("out").innerHTML = num1 + num2;
+function f(e) {
+    bl.push([e.value, 0])
+    bl.sort()
+    e.value = ''
+    refresh()
 }
-
-var bl1 = [];
-
-function redraw() {
-	document.querySelector("#lista").innerHTML = bl1
-		.map(
-			(elem, i) =>
-				`<li class="x${i % 2}">${elem}</li><button onclick="remove('${elem}')">Remove</button>`,
-		)
-		.join("");
+function g(i) {
+    bl[i][1] = bl[i][1] == 0 ? 1 : 0
+    refresh()
 }
-
-function remove(x) {
-	bl1.splice(bl1.indexOf(x), 1);
-	redraw();
-}
-
-function lista(x) {
-	bl1.push(x.value);
-	bl1.sort();
-	redraw();
+function del(e) {
+    bl = bl.filter(v => v[0] != e)
+    refresh()
 }
