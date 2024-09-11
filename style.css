@@ -1,0 +1,15 @@
+body{
+    text-align: center;
+}
+
+div{
+    background-color: #fff00;
+    font-size: 50px;
+    text-shadow: 1px 1px 3px gray;
+    text-align: center;
+}
+
+input[type=text]{
+    window: 300px
+    text-align: center;
+}
