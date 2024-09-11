@@ -14,3 +14,14 @@ function add() {
 	}
 	document.getElementById("out").innerHTML = num1 + num2;
 }
+
+var bl1 = [];
+
+function lista(x) {
+	bl1.push(x.value);
+	bl1.sort();
+	x.value = "";
+	document.querySelector("#lista").innerHTML = bl1
+		.map((elem, i) => `<li class="x${i % 2}">${elem}</li>`)
+		.join("");
+}

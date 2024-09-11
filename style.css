@@ -13,3 +13,11 @@ input[type=text]{
     window: 300px
     text-align: center;
 }
+
+li.x0{
+    background-color: red;
+}
+
+li.x1{
+    background-color: blue;
+}
